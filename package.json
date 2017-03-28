@@ -1,0 +1,17 @@
+{
+  "name": "language-mib",
+  "version": "0.0.0",
+  "description": "MIB language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albertored/atom-language-mib.git"
+  },
+  "bugs": {
+    "url": "https://github.com/albertored/atom-language-mib/issues"
+  },
+  "license": "MIT"
+}
