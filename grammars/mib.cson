@@ -1,0 +1,48 @@
+"name": "MIB"
+"scopeName": "source.mib"
+"fileTypes": ["mib"]
+
+"patterns": [
+    {
+        "match": "\\s*--.*?(--|$)"
+        "name": "comment.source.mib"
+    }
+    {
+        "match": "\\b(ACCESS|ANY|AUGMENTS|BEGIN|BIT|BITS|BOOLEAN|CHOICE|COMPONENTS|CONTACT-INFO|DEFINITIONS|DEFVAL|DESCRIPTION|DISPLAY-HINT|END|ENTERPRISE|EXTERNAL|FALSE|FROM|GROUP|IMPLICIT|IMPLIED|IMPORTS|INDEX|LAST-UPDATED|MANDATORY-GROUPS|MAX-ACCESS|MIN-ACCESS|MODULE-COMPLIANCE|MODULE-IDENTITY|MODULE|NOTIFICATION-GROUP|NOTIFICATION-TYPE|NOTIFICATIONS|NULL|OBJECT-GROUP|OBJECT-IDENTITY|OBJECT-TYPE|OBJECTS|OF|OPTIONAL|ORGANIZATION|REFERENCE|REVISION|SEQUENCE|SET|SIZE|STATUS|SYNTAX|TEXTUAL-CONVENTION|TRAP-TYPE|TRUE|UNITS|VARIABLES|WRITE-SYNTAX)\\b"
+        "name": "keyword.source.mib"
+    }
+    {
+        "match": "\\b(DisplayString|INTEGER|Counter|Gauge|IpAddress|OCTET STRING|TimeTicks|RowStatus|TruthValue|UInteger32|Unsigned32|Integer32|Counter32|TestAndIncr|TimeStamp|InstancePointer|OBJECT IDENTIFIER|Gauge32|AutonomousType|Counter64|PhysAddress|TimeInterval|MacAddress|StorageType|RowPointer|TDomain|TAddress)\\b"
+        "name": "storage.type.source.mib"
+    }
+    {
+        "match": "\\b(accessible-for-notify|current|deprecated|mandatory|not-accessible|obsolete|optional|read-create|read-only|read-write|write-only|experimental|mib-2|snmpModules|ifIndex)\\b"
+        "name": "storage.modifier.source.mib"
+    }
+    {
+        "begin": "\""
+        "end": "\""
+        "name": "string.source.mib"
+    }
+    {
+        "match": "::="
+        "name": "keyword.operator.source.mib"
+    }
+    {
+        "match": "\\<['0-9a-fA-FhH]*\\>"
+        "name": "constant.numeric.source.mib"
+    }
+    {
+        "match": "(^|\\v|\\s|)[0-9]+(\\s|,|$)"
+        "name": "constant.numeric.source.mib"
+    }
+    {
+        "name": "variable.complex.mib"
+        "begin": "\\(([0-9]+)((\\.\\.|\\s*\\|\\s*)([0-9]+))?"
+        "beginCaptures": {
+            "1": { "name": "constant.numeric.source.mib" }
+            "4": { "name": "constant.numeric.source.mib" }
+        }
+        "end": "\\)"
+    }
+]
